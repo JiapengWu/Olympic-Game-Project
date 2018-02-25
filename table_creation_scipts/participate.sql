@@ -10,6 +10,6 @@ CREATE TABLE cs421g19.participate
   ,foreign key(match_id) REFERENCES match(match_id)
 );
 
-INSERT INTO category VALUES(1,1,'11sec', 1,'gold');
-INSERT INTO category VALUES(2,2,'15sec', 2,'silver');
-INSERT INTO category VALUES(2,2,'17sec', 3,'bronze');
+INSERT INTO participate VALUES(1,1,'11sec', 1,'gold');
+INSERT INTO participate VALUES(2,2,'15sec', 2,'silver');
+INSERT INTO participate VALUES(2,2,'17sec', 3,'bronze');
