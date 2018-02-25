@@ -2,12 +2,15 @@
 CREATE TABLE cs421g19.player
 (
    player_id INTEGER NOT null unique
+  ,cname VARCHAR(50) NOT NULL
   ,pname VARCHAR(50) NOT NULL
   ,gender VARCHAR(50)
   ,gold_number INTEGER
   ,silver_number INTEGER
   ,bronze_number INTEGER
-  ,PRIMARY KEY(player_id)                                                                                                                                         
+  ,PRIMARY KEY(player_id)
+  ,foreign key(cname) REFERENCES country(cname)
+
 );
 
 INSERT INTO player VALUES(1, 'David Gilbert','female', 6, 6, 6);

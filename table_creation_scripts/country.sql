@@ -1,13 +1,14 @@
 CREATE TABLE cs421g19.country
 (
   cname varchar(50) not null unique
-  ,medal_number INTEGER
+  ,total_medal_number INTEGER
   ,gold_number INTEGER
   ,silver_number INTEGER
   ,bronze_number INTEGER
-  ,PRIMARY KEY( cname)
+  ,PRIMARY KEY(cname)
 );
 
-INSERT INTO country VALUES(1,1,'11 sec', 1,'gold');
-INSERT INTO country VALUES(2,2,'15 sec', 2,'silver');
-INSERT INTO country VALUES(2,2,'17 sec', 3,'bronze');
+INSERT INTO country VALUES("Canada",0, 0, 0, 0);
+INSERT INTO country VALUES("Russia",0, 0, 0, 0);
+INSERT INTO country VALUES("China",0, 0, 0, 0);
+INSERT INTO country VALUES("US",0, 0, 0, 0);
