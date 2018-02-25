@@ -5,9 +5,9 @@ CREATE TABLE cs421g19.player
   ,pname VARCHAR(50) NOT NULL
   ,gender VARCHAR(50) not null
   ,cname varchar(50) 
-  ,gold_number INTEGER
-  ,silver_number INTEGER
-  ,bronze_number INTEGER
+  ,gold_number INTEGER not null -- If no medals, then it should be 0
+  ,silver_number INTEGER not null
+  ,bronze_number INTEGER not null
   ,PRIMARY KEY(player_id)
   ,FOREIGN KEY(cname) REFERENCES country(cname)
 );
