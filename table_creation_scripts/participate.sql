@@ -11,6 +11,6 @@ CREATE TABLE cs421g19.participate
   ,foreign key(medal_type) REFERENCES medals(medal_type)
 );
 
-INSERT INTO category VALUES(1,1,'11sec', 1,'gold');
-INSERT INTO category VALUES(2,2,'15sec', 2,'silver');
-INSERT INTO category VALUES(2,2,'17sec', 3,'bronze');
+INSERT INTO category VALUES(1,1,'11sec', 1,'Gold');
+INSERT INTO category VALUES(7,2,'15sec', 2,'Silver');
+INSERT INTO category VALUES(9,3,'17sec', 3,'Bronze');
