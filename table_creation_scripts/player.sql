@@ -9,7 +9,7 @@ CREATE TABLE cs421g19.player
   ,silver_number INTEGER
   ,bronze_number INTEGER
   ,PRIMARY KEY(player_id)
-  ,FOREIGN KEY(cname) REFERENCES match(country)
+  ,FOREIGN KEY(cname) REFERENCES country(cname)
 );
 
 INSERT INTO player VALUES(1, 'David Gilbert','female','Japan', 6, 6, 6);
