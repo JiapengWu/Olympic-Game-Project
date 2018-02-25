@@ -9,4 +9,4 @@ CREATE TABLE cs421g19.spectator
 INSERT INTO match VALUES(12, 'David Gilbert');
 INSERT INTO match VALUES(23, 'Mathieu Vachon');
 INSERT INTO match VALUES(34, 'Daniel Chernis');
-INSERT INTO match VALUES(45, 'Paul Wu');
+INSERT INTO match VALUES(46, 'Paul Wu');
