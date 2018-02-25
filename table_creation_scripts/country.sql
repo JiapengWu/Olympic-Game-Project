@@ -8,7 +8,8 @@ CREATE TABLE cs421g19.country
   ,PRIMARY KEY(cname)
 );
 
-INSERT INTO country VALUES("Canada",0, 0, 0, 0);
-INSERT INTO country VALUES("Russia",0, 0, 0, 0);
-INSERT INTO country VALUES("China",0, 0, 0, 0);
-INSERT INTO country VALUES("US",0, 0, 0, 0);
+INSERT INTO country VALUES('Canada',0, 0, 0, 0);
+INSERT INTO country VALUES('Russia',0, 0, 0, 0);
+INSERT INTO country VALUES('China',0, 0, 0, 0);
+INSERT INTO country VALUES('USA',0, 0, 0, 0);
+INSERT INTO country VALUES('Japan',0, 0, 0, 0);
