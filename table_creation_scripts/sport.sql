@@ -1,5 +1,4 @@
-
-
+drop table sport;
 CREATE TABLE cs421g19.sport
 (
    sname VARCHAR(500) NOT null unique

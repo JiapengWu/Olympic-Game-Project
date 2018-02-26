@@ -1,3 +1,4 @@
+drop table category;
 CREATE TABLE cs421g19.category
 (
   match_id INTEGER not null unique
