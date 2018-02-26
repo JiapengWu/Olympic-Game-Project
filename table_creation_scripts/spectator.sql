@@ -1,12 +1,10 @@
-
-CREATE TABLE cs421g19.spectator
+CREATE TABLE if not exists cs421g19.spectator
 (
-   sid INTEGER NOT null unique
-   tid integer 
+   sid INTEGER NOT NULL unique
   ,sname varchar(50)
-  ,PRIMARY KEY( sid)
-  ,foreign key(tid) references ticket(tid)
+  ,PRIMARY KEY(sid)
 );
 
-INSERT INTO match VALUES(12, 7, 'David Gilbert');
-INSERT INTO match VALUES(23, 42, 'Mathieu Vachon');
+
+INSERT INTO spectator VALUES(12,  'David Gilbert');
+INSERT INTO spectator VALUES(23,  'Mathieu Vachon');

@@ -1,10 +1,9 @@
-
-
-CREATE TABLE cs421g19.sport
+CREATE table if not exists cs421g19.sport
 (
    sname VARCHAR(500) NOT null unique
   ,distance INTEGER
-  ,PRIMARY KEY(sname)                                                                                                                                         
+  ,PRIMARY KEY(sname)
+  ,CHECK (distance = 50 or distance = 100 or distance = 200 or distance = 400 or distance = 1000 or distance = 1500)
 );
 
 INSERT INTO Sport VALUES( 'Breaststroke', 200);
