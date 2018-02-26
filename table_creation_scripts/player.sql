@@ -10,7 +10,7 @@ CREATE TABLE if not exists cs421g19.player
   ,bronze_number INTEGER not null
   ,PRIMARY KEY(player_id)
   ,FOREIGN KEY(cname) REFERENCES country(cname)
-  ,CHECK (gold_number>=0 and silver_number>=0 and bronze_number>=0)
+  ,CHECK (player_id>=0 and gold_number>=0 and silver_number>=0 and bronze_number>=0)
 );
 
 INSERT INTO player VALUES(1, 'David Gilbert','female','Japan', 6, 6, 6);

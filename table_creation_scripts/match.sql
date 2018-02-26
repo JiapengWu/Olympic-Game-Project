@@ -1,14 +1,15 @@
-CREATE TABLE cs421g19.match
+CREATE TABLE if not exists cs421g19.match
 (
    match_id INTEGER NOT null unique
-  ,match_type VARCHAR(50)
+  ,match_type VARCHAR(50) not null
   ,location VARCHAR(50)
   ,date varchar(50)
-  ,sports_name varchar(50)
-  ,gender varchar(50)
-  ,team_type varchar(50)
+  ,sports_name varchar(50) not null
+  ,gender varchar(50) not null
+  ,team_type varchar(50) not null
   ,PRIMARY KEY(match_id)
   ,FOREIGN key(sports_name) REFERENCES sport(sname)
+  CHECK (match_id>=0)
 );
 
 --ALTER TABLE match
