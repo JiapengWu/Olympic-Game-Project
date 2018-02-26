@@ -1,5 +1,4 @@
-
-CREATE TABLE cs421g19.ticket
+CREATE TABLE if not exists cs421g19.ticket
 (
    tid INTEGER NOT NULL unique 
   ,match_id integer NOT NULL
@@ -9,6 +8,7 @@ CREATE TABLE cs421g19.ticket
   ,PRIMARY KEY(tid)
   ,foreign key(match_id) references match(match_id)
   ,foreign key(sid) references spectator(sid)
+  ,CHECK (tid>=0 and sid>=0 and match_id>=0 and price>=0.0)
 );
 
 INSERT INTO ticket VALUES(42, 1, 12, '55f', 50.99);
