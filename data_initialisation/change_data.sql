@@ -10,14 +10,17 @@ select *
 from country 
 order by total_medal_number,gold_number,silver_number,bronze_number  desc;
 
+-- if player participate in some match then increase the match ticket price 
+-- maybe later if match is final or if player has gold medals 
 
-update country
-	SET total_medal_number = 
+update ticket
+set price = price +30
+where exists
 (
-SELECT sum(country.gold_number)+
-		sum(country.silver_number)+
-		sum(country.bronze_number) 
-FROM country where country.cname = 'France'
-)
-where country.cname = 'France'
-;
+select price from ticket 
+where exists
+(select match_id from participate
+where player_id <= 5
+union
+select match_id from participate 
+));
