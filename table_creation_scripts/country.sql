@@ -1,4 +1,4 @@
-CREATE TABLE if not exists cs421g19.country
+CREATE TABLE cs421g19.country
 (
   cname varchar(50) not null unique
   ,total_medal_number INTEGER

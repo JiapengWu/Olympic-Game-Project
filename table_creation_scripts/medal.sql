@@ -1,5 +1,5 @@
 
-CREATE TABLE if not exists cs421g19.medals
+CREATE TABLE cs421g19.medals
 (
    medal_type VARCHAR(10) unique not null
   ,PRIMARY KEY(medal_type)                                                                                                                                         

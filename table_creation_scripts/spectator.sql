@@ -1,4 +1,4 @@
-CREATE TABLE if not exists cs421g19.spectator
+CREATE TABLE if cs421g19.spectator
 (
    sid INTEGER NOT NULL unique
   ,sname varchar(50)

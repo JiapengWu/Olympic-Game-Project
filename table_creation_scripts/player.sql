@@ -1,4 +1,4 @@
-CREATE TABLE if not exists cs421g19.player
+CREATE TABLE cs421g19.player
 (
    player_id INTEGER NOT NULL unique
   ,pname VARCHAR(50) NOT NULL
@@ -17,3 +17,4 @@ INSERT INTO player VALUES(5, 'Paul Wu', 'male','China' , 2, 5, 6);
 INSERT INTO player VALUES(3, 'Daniel Chernis', 'male','Canada' , 3, 5, 0);
 INSERT INTO player VALUES(7, 'Mathieu Vachon', 'male','France' , 5, 8, 7);
 INSERT INTO player VALUES(9, 'Bruce Wayne','male','USA' ,3, 2, 1);
+delete from player where player_id=5;
