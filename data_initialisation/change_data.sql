@@ -24,3 +24,18 @@ where player_id <= 5
 union
 select match_id from participate 
 ));
+
+-- if match is final increase price and change seat numberto "final"
+
+update ticket 
+set price = price +100, seat_number = concat( seat_number,'Final')
+where exists
+(
+	 
+	select match_id from ticket	
+	intersect
+	(select match_id from match
+	where match_type = 'final') 
+
+
+);
