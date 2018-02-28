@@ -1,15 +1,24 @@
-CREATE TABLE if not exists cs421g19.category
+drop table category cascade;
+CREATE TABLE cs421g19.category
 (
-  match_id INTEGER not null unique
-  ,sname varchar(50) not null
-  ,team_type VARCHAR(50) not null
-  ,gender VARCHAR(50) not null
-  ,PRIMARY KEY( sname,team_type,gender)
-  ,foreign key(sname) REFERENCES sport(sname)
-  ,FOREIGN KEY(match_id) REFERENCES match(match_id)
+  sname varchar(50) NOT null
+  ,sport_style VARCHAR(50)
+  ,distance INTEGER
+  ,team_type VARCHAR(50)
+  ,gender VARCHAR(50)
+  ,match_id INTEGER
+  ,FOREIGN KEY(sname) REFERENCES sport(sname) ON DELETE CASCADE
+  ,FOREIGN KEY(match_id) REFERENCES match (match_id) ON DELETE CASCADE
+  ,PRIMARY KEY(sname, distance, team_type, gender)
   ,CHECK (match_id>=0)
 );
 
-INSERT INTO category VALUES(1,'Freestyle', 'Single Player','male');
-INSERT INTO category VALUES(2,'Sprint', 'Team Player', 'female');
-INSERT INTO category VALUES(3,'Butterfly', 'Single Player','mixed');
+INSERT INTO category VALUES('Swimming', 'Backstroke', 200, 'Single Player','male');
+INSERT INTO category VALUES('Butterfly', 'Single Player','mixed');
+
+
+INSERT INTO Sport VALUES('Backstroke', 200);
+INSERT INTO Sport VALUES('Backstroke', 100);
+INSERT INTO Sport VALUES('Breaststroke', 100);
+INSERT INTO Sport VALUES('Butterfly', 100);
+INSERT INTO Sport VALUES('Freestyle', 400);

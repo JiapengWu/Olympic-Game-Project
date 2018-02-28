@@ -1,4 +1,4 @@
-CREATE TABLE if not exists cs421g19.ticket
+CREATE TABLE cs421g19.ticket
 (
    tid INTEGER NOT NULL unique 
   ,match_id integer NOT NULL
