@@ -11,8 +11,6 @@ CREATE TABLE cs421g19.country
 );
 
 
-
-
 CREATE TABLE cs421g19.player
 (
    player_id INTEGER NOT NULL unique
@@ -35,15 +33,12 @@ CREATE TABLE cs421g19.sports
   ,distance INTEGER
   ,team_type VARCHAR(50) NOT NULL
   ,gender VARCHAR(50) NOT NULL
---  ,match_id INTEGER
---  ,FOREIGN KEY(match_id) REFERENCES match (match_id) ON DELETE CASCADE
   ,UNIQUE (sname, distance, team_type, gender) 
   ,PRIMARY KEY(sports_id)
   ,CHECK (distance = 100 or distance = 200 or distance = 400 or distance = 800 or distance = 1000 or distance = 1500)
   ,CHECK(gender = 'male' or gender = 'female')
   ,CHECK(stype = 'Swimming' or stype = 'Athletics')
   ,CHECK(team_type = 'Single' or team_type = 'Team')
---  ,CHECK (match_id>=0)
 );
 
 
@@ -53,22 +48,12 @@ CREATE TABLE if not exists cs421g19.matches
   ,match_type VARCHAR(50)
   ,location VARCHAR(50) default 'Water Cube'
   ,match_date date not null default CURRENT_DATE
-  ,sports_id INTEGER NOT NULL
+  ,sports_id INTEGER NOT null
   ,PRIMARY KEY(match_id)
-  ,foreign KEY(sports_id) references sports(sports_id)
+  ,foreign KEY(sports_id) references sports(sports_id)  on delete cascade
   ,CHECK (match_type = 'final' or match_type = 'semi-final' or match_type = 'preliminary')
   ,CHECK (match_id >= 0)
 );
-
-
-
-CREATE TABLE if not exists cs421g19.medals
-(
-   medal_type VARCHAR(10)
-  ,PRIMARY KEY(medal_type)                                                                                                                                         
-);
-
-
 CREATE TABLE cs421g19.participate
 (
   player_id INTEGER not null
@@ -79,7 +64,6 @@ CREATE TABLE cs421g19.participate
   ,PRIMARY KEY(player_id, match_id)
   ,foreign key(player_id) REFERENCES player(player_id)
   ,foreign key(match_id) REFERENCES matches(match_id)
-  ,foreign key(medal_type) REFERENCES medals(medal_type)
   ,CHECK (medal_type = 'gold' or medal_type = 'silver' or medal_type = 'bronze')
   ,CHECK (ranking>=0 and player_id>=0 and match_id>=0)
 );
