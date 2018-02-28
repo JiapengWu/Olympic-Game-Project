@@ -17,4 +17,3 @@ INSERT INTO participate VALUES(1, 1, '17.03 s', 1, 'gold');
 INSERT INTO participate VALUES(3, 1, '17.13 s', 2, 'silver');
 INSERT INTO participate VALUES(5, 1, '17.23 s', 3, 'bronze');
 INSERT INTO participate VALUES(7, 1, '17.33 s', 4, null);
-

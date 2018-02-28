@@ -25,17 +25,18 @@ order by total_medal_number,gold_number,silver_number,bronze_number  desc;
 -- maybe later if match is final or if player has gold medals 
 
 update ticket
-	set price = price +30
-	where exists
-	(
+set price = price +30
+where price = any
+(
 	select price from ticket 
-	where exists
-		(select match_id from participate
-		where player_id = 5
-		union
-		select match_id from participate
-		)
-	);
+	where match_id = any
+	(
+	select match_id from participate
+	where player_id <= 5
+	union
+	select match_id from participate 
+	)
+);
 
 -- if match is final increase price and change seat numberto "final"
 
