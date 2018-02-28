@@ -1,4 +1,3 @@
-delete from player where player_id >= 0 cascade;
 insert into player  values (1, 'Marga Gulk', 'Female', 'Malaysia', 63, 26, 86);
 insert into player  values (2, 'Raquel Worshall', 'Female', 'Libya', 37, 29, 79);
 insert into player  values (3, 'Rowan Sales', 'Male', 'Philippines', 66, 54, 8);
