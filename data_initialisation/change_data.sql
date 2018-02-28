@@ -1,9 +1,20 @@
--- get the number of gold medals from each player of same country & add that total number to that country
+-- get the number of medals from each player of same country 
+-- add it to each respective medal count of that country 
+-- then calculate the total number of medals for that country
 Update country
 	set gold_number = 
 	(select sum(player.gold_number) from player
 	 where country.cname = player.cname
-	);
+	),
+	silver_number = 
+	(select sum(player.silver_number) from player
+	 where country.cname = player.cname
+	),
+	bronze_number = 
+	(select sum(player.bronze_number) from player
+	 where country.cname = player.cname
+	),
+	total_medal_number = gold_number + silver_number + bronze_number;
 
 
 select * 
