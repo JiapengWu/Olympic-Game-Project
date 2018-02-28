@@ -1,0 +1,25 @@
+INSERT INTO sports VALUES 1 Swimming  Backstroke  100  Single male
+INSERT INTO sports VALUES 2 Swimming  Breaststroke  100  Single male
+INSERT INTO sports VALUES 3 Swimming  Butterfly  100  Single male
+INSERT INTO sports VALUES 4 Swimming  Freestyle  100  Single male
+INSERT INTO sports VALUES 5 Swimming  Backstroke  100  Single female
+INSERT INTO sports VALUES 6 Swimming  Breaststroke  100  Single female
+INSERT INTO sports VALUES 7 Swimming  Butterfly  100  Single female
+INSERT INTO sports VALUES 8 Swimming  Freestyle  100  Single female
+INSERT INTO sports VALUES 9 Swimming  Backstroke  200  Single male
+INSERT INTO sports VALUES 10 Swimming  Breaststroke  200  Single male
+INSERT INTO sports VALUES 11 Swimming  Butterfly  200  Single male
+INSERT INTO sports VALUES 12 Swimming  Freestyle  200  Single male
+INSERT INTO sports VALUES 13 Swimming  Backstroke  200  Single female
+INSERT INTO sports VALUES 14 Swimming  Breaststroke  200  Single female
+INSERT INTO sports VALUES 15 Swimming  Butterfly  200  Single female
+INSERT INTO sports VALUES 16 Swimming  Freestyle  200  Single female
+INSERT INTO sports VALUES 17 Athletics  Running  100  Single female
+INSERT INTO sports VALUES 18 Athletics  Running  200  Single female
+INSERT INTO sports VALUES 19 Athletics  Running  400  Single female
+INSERT INTO sports VALUES 20 Athletics  Running  800  Single female
+INSERT INTO sports VALUES 21 Athletics  Running  100  Single male
+INSERT INTO sports VALUES 22 Athletics  Running  200  Single male
+INSERT INTO sports VALUES 23 Athletics  Running  400  Single male
+INSERT INTO sports VALUES 24 Athletics  Running  800  Single male
+INSERT INTO sports VALUES 25 Athletics  Relay Running  400  Team female
