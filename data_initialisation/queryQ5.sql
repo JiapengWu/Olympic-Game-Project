@@ -6,8 +6,8 @@ group by cname,pname,gold_number
 order by max(gold_number) desc;
 
 --Find all player female player who got gold and participate in a single type swimming match 
- 	select pname from player
- 	where player_id = any
+ 	select pname, gold_number, gender from player
+ 	where gender = 'Female' and player_id = any
  	(
  		select player_id from player
  		where gold_number > 0 
@@ -19,7 +19,7 @@ order by max(gold_number) desc;
 			where sports_id = any
 			(
 				select sports_id from sports --sub query --get sport id from sport that are single swimming	
- 				where stype = 'Swimming'and team_type = 'Single'
+ 				where stype = 'Swimming'and team_type = 'Single' 
 			)
  		)
  	);
@@ -36,18 +36,33 @@ country on
 
 select pname, gold_number from player
 where cname = 'Canada'
-group by pname, gold_number
-order by max(gold_number) desc
-limit 1;
+and gold_number = (
+	select max(gold_number) from player
+	where cname = 'Canada'
+	)
+
+
 
 -- Find female with the most gold medals from country with most total medals 
 
 select gold_number, pname, cname from player
 where gender = 'female' and cname in
   (select p.cname from player p inner join country c on p.cname = c.cname
-   group by p.gold_number, p.pname, p.cname
+   where 
    order by max(c.total_medal_number) desc
-   limit 1);
+   limit 1
+  );
+
+select pname from (
+	select pname in player where 
+	and cname in
+	(select cname from country where gold_number = (
+		select max(gold_number) from country
+		)
+	)
+)
+
+
 
 -- Getting result and ranking of players from matches on final day (gives something weird!!!)	
  
@@ -62,4 +77,4 @@ select m.match_date, s.distance from matches m inner join sports s
 on m.sports_id = s.sports_id
 where s.sname = 'Backstroke';
 
-
+select pname, cname, gender from player where cname = 'China';
