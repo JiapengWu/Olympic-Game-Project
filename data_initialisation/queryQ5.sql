@@ -46,14 +46,20 @@ and gold_number = (
 -- Find female with the most gold medals from country with most total medals
 
 select pname, gold_number from player
-where gold_number =
-	(select max(gold_number) from player
+where cname in (select cname from country where gold_number = (
+			select max(gold_number) from country
+			)
+		)
+	and gender = 'Female';
+	and gold_number = (
+	select max(gold_number) from player
 		where gender = 'Female' and cname in
 		(select cname from country where gold_number = (
 			select max(gold_number) from country
 			)
 		)
-	)
+	);
+ 
 
 -- Getting result and ranking of players from matches on final day (gives something weird!!!)
 
