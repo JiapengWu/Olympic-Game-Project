@@ -32,5 +32,34 @@ inner join
 country on 
 ; 
 
-		
+-- find the Canadian who has won the most gold medals
+
+select pname, gold_number from player
+where cname = 'Canada'
+group by pname, gold_number
+order by max(gold_number) desc
+limit 1;
+
+-- Find female with the most gold medals from country with most total medals 
+
+select gold_number, pname, cname from player
+where gender = 'female' and cname in
+  (select p.cname from player p inner join country c on p.cname = c.cname
+   group by p.gold_number, p.pname, p.cname
+   order by max(c.total_medal_number) desc
+   limit 1);
+
+-- Getting result and ranking of players from matches on final day (gives something weird!!!)	
  
+select p.result, p.ranking, m.match_date from participate p inner join matches m 
+on p.match_id = m.match_id 
+where m.match_date >= all
+  (select m.match_date from matches);
+
+-- Finding dates and distance of all backstroke events
+
+select m.match_date, s.distance from matches m inner join sports s 
+on m.sports_id = s.sports_id
+where s.sname = 'Backstroke';
+
+
