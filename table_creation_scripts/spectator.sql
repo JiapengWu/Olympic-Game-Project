@@ -5,5 +5,9 @@ CREATE TABLE cs421g19.spectator
   ,PRIMARY KEY(sid)
 );
 
-INSERT INTO spectator VALUES(12,  'David Gilbert');
-INSERT INTO spectator VALUES(23,  'Mathieu Vachon');
+INSERT INTO spectator VALUES(1,  'David Gilbert');
+INSERT INTO spectator VALUES(2,  'Mathieu Vachon');
+INSERT INTO spectator VALUES(3,  'Daniel Chernis');
+INSERT INTO spectator VALUES(4,  'Paul Wu');
+INSERT INTO spectator VALUES(5,  'Joseph DSilva');
+INSERT INTO spectator VALUES(6,  'Tony Stark');
