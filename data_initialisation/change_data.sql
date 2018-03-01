@@ -76,23 +76,3 @@ where exists
 	where match_type = 'final')
 );
 
-
---reset medal count for all players
-UPDATE player
-SET gold_number = 
-	(case when player_id = any
-		(SELECT player_id	FROM participate p
-		right JOIN matches ON matches.match_type = 'final' and p.match_id = matches.match_id 
-		WHERE ranking = 1) then 0 else 0 end),
-		
-	silver_number = 
-	(case when player_id = any
-		(SELECT player_id	FROM participate p
-		right JOIN matches ON matches.match_type = 'final' and p.match_id = matches.match_id 
-		WHERE ranking = 2) then 0 else 0 end),
-		
-	bronze_number =
-	(case when player_id = any
-		(SELECT player_id	FROM participate p
-		right JOIN matches ON matches.match_type = 'final' and p.match_id = matches.match_id 
-		WHERE ranking = 3)then 0 else 0 end);
