@@ -691,7 +691,15 @@ INSERT INTO participate VALUES(89, 74, '24.9157s', 8, NULL);
 
 INSERT INTO spectator VALUES(12,  'David Gilbert');
 INSERT INTO spectator VALUES(23,  'Mathieu Vachon');
+INSERT INTO spectator VALUES(3,  'Daniel Chernis');
+INSERT INTO spectator VALUES(4,  'Paul Wu');
+INSERT INTO spectator VALUES(5,  'Joseph DSilva');
+INSERT INTO spectator VALUES(6,  'Tony Stark');
 
 
 INSERT INTO ticket VALUES(42, 1, 12, '55f', 50.99);
 INSERT INTO ticket VALUES(7, 2, 23, '244A', 249.99);
+INSERT INTO ticket VALUES(3, 1, 3, '54B', 53.99);
+INSERT INTO ticket VALUES(4, 2, 4, '14E', 249.99);
+INSERT INTO ticket VALUES(5, 1, 5, '18B', 250.99);
+INSERT INTO ticket VALUES(6, 2, 6, '44J', 129.99);
