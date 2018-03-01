@@ -39,7 +39,7 @@ where cname = 'Canada'
 and gold_number = (
 	select max(gold_number) from player
 	where cname = 'Canada'
-	)
+	);
 
 
 
@@ -50,7 +50,7 @@ where cname in (select cname from country where gold_number = (
 			select max(gold_number) from country
 			)
 		)
-	and gender = 'Female';
+	and gender = 'Female'
 	and gold_number = (
 	select max(gold_number) from player
 		where gender = 'Female' and cname in
@@ -59,14 +59,6 @@ where cname in (select cname from country where gold_number = (
 			)
 		)
 	);
- 
-
--- Getting result and ranking of players from matches on final day (gives something weird!!!)
-
-select p.result, p.ranking, m.match_date from participate p inner join matches m
-on p.match_id = m.match_id
-where m.match_date >= all
-  (select m.match_date from matches);
 
 -- Finding dates and distance of all backstroke events
 
@@ -74,7 +66,6 @@ select m.match_date, s.distance from matches m inner join sports s
 on m.sports_id = s.sports_id
 where s.sname = 'Backstroke';
 
-select pname, cname, gender from player where cname = 'China';
 
 -- find the best  medal winner athlete per country
 select cname,pname ,gold_number,silver_number,bronze_number from player
@@ -103,15 +94,16 @@ order by max(gold_number),max(silver_number),max(bronze_number) ;
 
 -- find average medals won by athletes from each country  ex: a1 won 3 medals, A2 won 0 => avg 1.5
 
-select cname,avg(player.gold_number)+avg(player.silver_number)+avg(player.bronze_number)/3.0 as average_medal_won_per_athlete_per_country from player
+select cname,avg(player.gold_number)+avg(player.silver_number)+avg(player.bronze_number)/3.0
+as average_medal_won_per_athlete_per_country from player
 group by cname order by average_medal_won_per_athlete_per_country desc
 ;
 
---find all matches with price under 100 with russian participant
+--find all matches with price under 100 with chinese participant
 
 
-		select tid,price, player_id,participate.match_id from participate
-		inner join
-		ticket on ticket.match_id = participate.match_id
-		where price < 100 and player_id = any
-			(select player_id from player where cname = 'Russia');
+select tid,price, player_id,participate.match_id from participate
+  inner join
+	ticket on ticket.match_id = participate.match_id
+	where price < 200 and player_id = any
+	(select player_id from player where cname = 'China');
